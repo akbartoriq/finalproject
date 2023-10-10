@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>WINGS | Capstone Project</title>
+    <link href="dist/css/style.css" rel="stylesheet" />
+
+    <!-- Fav Icon -->
+    <link rel="shortcut icon" href="assets/img/logo-wings.png" type="image/x-icon" />
+
+    <!-- Font Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Font Awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Animate Style -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="dist/css/style.css" />
+  </head>
+
+  <body id="home">
+    <!-- Navbar -->
+    <header class="navbar navbar-expand-lg fixed-top navbar-dark animate__animated animate__fadeInDown">
+      <img src="assets/img/logo-wings.png" alt="logo" width="80">
+      <nav>
+      <ul class="nav__link">
+        <li><a href="index.html">Home</a></li>
+        <li><a class="active" href="service.html">Service</a></li>
+        <li><a href="order.html">Order</a></li>
+        <li><a href="team.html">Our Team</a></li>
+      </ul>
+    </nav>
+    <div class="partner">
+      <img src="assets/img/logo-km.png" alt="logo-km" width="65">
+      <img src="assets/img/logo-revou.png" alt="logo-revou" width="55">
+    </div>
+    </header>
+    <!-- Navbar -->
+
+    <!-- Hero -->
+    <div class="hero-2 d-flex align-items-center">
+      <div class="container">
+        <div class="row">
+          <div class="col text-center">
+            <h1 class="text-white fw-bold mb-4 animate__animated animate__fadeInUp animate__delay-1s">
+              Service <br />
+            </h1>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Hero -->
+
+    <!-- Service -->
+    <div class="box-container">
+      <div class="box">
+          <div class="image">
+                 <img src="assets/img/services/service-1.jpg">
+                  <h3>Local</h3>
+                  <p> 1-5 Days<br>
+                     All Indonesia<br>
+                     Delivery time depends <br>
+                     on the destination area</p>
+                  <a href="order.html" target="_blank"><button class="btn">Delivery</button></a>
+          </div>
+      </div>
+
+      <div class="box">
+          <div class="image">
+                  <img src="assets/img/services/service-2.jpg">
+                  <h3>Domestic</h3>
+                  <p>7-14 Day <br>
+                     All Indonesia<br>
+                     Delivery time depends <br>
+                     on the destination area</p>
+                  <a href="order.html" target="_blank"><button class="btn">Deliver</button></a>
+          </div>
+      </div>
+          
+      <div class="box">
+          <div class="image">
+                  <img src="assets/img/services/service-3.jpg">
+                  <h3>Internasional</h3>
+                  <p>7-30 Days <br>
+                     All Country <br>
+                     Delivery time depends <br>
+                     on the destination area</p>
+                  <a href="order.html" target="_blank"><button class="btn">Delivery</button></a>
+                  
+          </div>
+      </div>
+    </div>
+    <!-- Service -->
+
+
+    <!-- Price -->
+    <div>
+      <br>
+      <center><h2>Check Prices</h2></center><br>
+      <form>
+      <label for="kota_asal">Kota Asal:</label>
+      <input type="text" id="kota_asal" required>
+      
+      <label for="kota_tujuan">Kota Tujuan:</label>
+      <input type="text" id="kota_tujuan" required>
+      
+      <label for="berat">Berat (kg):</label>
+      <input type="number" id="berat" step="0.01" required>
+      
+      <button id="cekButton" class="btn">Cek Ongkir</button>
+      <button id="kembaliButton" class="btn" style="background-color: #e74c3c;">Kembali</button>
+     
+      <div id="hasil"></div>
+
+    </form>
+  </div>
+
+  <script>
+   
+      document.getElementById("kembaliButton").addEventListener("click", function () {
+    
+          window.history.back();
+      });
+
+    
+      document.getElementById("cekButton").addEventListener("click", function () {
+          var kota_asal = document.getElementById("kota_asal").value;
+          var kota_tujuan = document.getElementById("kota_tujuan").value;
+          var berat = parseFloat(document.getElementById("berat").value);
+
+         
+          var hasil = "<h2>Hasil Cek Ongkir</h2>";
+          hasil += "<strong>Kota Asal:</strong> " + kota_asal + "<br>";
+          hasil += "<strong>Kota Tujuan:</strong> " + kota_tujuan + "<br>";
+          hasil += "<strong>Berat:</strong> " + berat + " kg<br>";
+
+         
+          var harga_per_kg = 5000; 
+          var total_harga = berat * harga_per_kg;
+
+          hasil += "<strong>Total Harga:</strong> Rp " + total_harga + "<br>";
+
+          document.getElementById("hasil").innerHTML = hasil;
+      });
+  </script>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-col">
+            <h4>WINGS</h4>
+            <ul>
+            <li><img src="assets/img/logo-wings.png" alt="logo" width="60"></li>
+            <li><p>An expedition built out of necessity and survived out of trust.</p></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Menu</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="service.html">Service</a></li>
+              <li><a href="order.html">Order</a></li>
+              <li><a href="team.html">Team</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Guide and Help</h4>
+            <ul>
+              <li><a href="#">Care</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms and Condition</a></li>
+              <li><a href="#">Mitra</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Follow us on</h4>
+            <div class="social-media">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            <div><p>Copyright 2023 by WINGS Expedition, All Right Reserved.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer -->
+    
+  </body>
+
+    <!-- JS -->
+    <script src="dist/js/script.js"></script>
+
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>

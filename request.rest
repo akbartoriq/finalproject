@@ -1,0 +1,30 @@
+GET http://localhost:5000/users
+
+###
+GET http://localhost:5000/users/1
+
+###
+POST http://localhost:5000/users
+Content-Type: application/json
+
+{
+  "no_resi": "1234590099900",
+  "nama_pengirim": "John Doe",
+  "nama_penerima": "Jane Smith",
+  "alamat": "jalan",
+  "no_hp": "1234567890",
+  "keterangan": "Catatan penting"
+}
+
+###
+PATCH http://localhost:5000/users/1
+Content-Type: application/json
+
+{
+    "name": "M Fikri",
+    "email": "mfikri@gmail.com",
+    "gender": "Male"
+}
+
+###
+DELETE http://localhost:5000/users/2
